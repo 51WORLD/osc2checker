@@ -1,7 +1,7 @@
 
 /*
- * OpenSCENARIO2.0 grammar checker
- * https://github.com/51WORLD/OpenSCENARIO2Grammar/  
+ * 51WORLD OpenSCENARIO2.0 grammar checker
+ * https://github.com/51WORLD/osc2checker  
  *
  * BSD 3-Clause License
  *

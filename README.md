@@ -7,7 +7,7 @@ It's implemented by [ANTLR4](https://github.com/antlr/antlr4) with [ASAM OpenSCE
 Note: It is based on the current public review draft of the language - 
 [ASAM OpenSCENARIO V2.0.0-PRC.1](https://asam-ev.github.io/public_release_candidate/asam-openscenario/2.0.0/welcome.html), which is **non-final**.
 
-Repository: https://github.com/51world/osc2checker
+Repository: https://github.com/51WORLD/osc2checker
 
 ## Installation
 Install JDK of Java (version 1.7 or higher)
