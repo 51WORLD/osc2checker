@@ -15,7 +15,7 @@ Install JDK of Java (version 1.7 or higher)
 
 ## How to use
 
-### Window
+### Windows
 ```
 check.bat yourOSCFileAbsolutePath
 
