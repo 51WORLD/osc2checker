@@ -1,0 +1,26 @@
+scenario cut_out: 
+    lead_vehicle: vehicle 
+    other_vehicle: vehicle # this is a comment 
+    side: av_side
+
+    do serial: # bug: conflict with ebnf about 'do serial()'
+        start_driving: parallel: # bug: conflict with ebnf about 'parallel()'
+            sut.vehicle.drive() 
+            lead_vehicle.drive() 
+            other_vehicle.drive()
+        lead: parallel: 
+            sut.vehicle.drive() 
+            lead_vehicle.drive() with: 
+                lane(same_as: sut.vehicle, at: end) #What's sut.vehicle?
+                position([20m..200m], ahead_of: sut.vehicle, at: end) # bug conflict with ebnf [20..200]m
+            other_vehicle.drive() with: 
+                lane(same_as: sut.vehicle, at: end) 
+                speed(0kph, at: end) 
+                position([20m..200m], ahead_of: lead_vehicle, at: end) # bug conflict with ebnf [20..200]m
+
+        cut_out: parallel(duration: [1second..4second]): # bug conflict with ebnf [1..4]second
+            sut.vehicle.drive() 
+            lead_vehicle.drive() with: 
+                lane(side_of: sut.vehicle, side: side, at: end) 
+            other_vehicle.drive() with: 
+                speed(speed: 0kph)
