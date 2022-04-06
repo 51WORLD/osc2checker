@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-current=$PWD
-
+current=$(cd $(dirname $0) && pwd)
 defaultOscFile=$current/examples/cut_out.osc
 guiOption=-gui
 
@@ -42,8 +41,7 @@ export CLASSPATH=".:$AntlrFilePath:$CLASSPATH"
 
 parserPath=$current/osc2grammar/parser
 antlr4  -o $parserPath $current/osc2grammar/OpenSCENARIO2.g4
-
-pushd $parserPath
+cd $parserPath
 javac OpenSCENARIO2*.java
 grun OpenSCENARIO2 osc $guiOption $defaultOscFile 
-popd
+cd $current
