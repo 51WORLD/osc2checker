@@ -1,4 +1,4 @@
-// Generated from /Users/mao/work/openscenario2/osc2grammar/OpenSCENARIO2.g4 by ANTLR 4.9.1
+// Generated from /Users/mao/work/openscenario2/osc2checker/osc2grammar/OpenSCENARIO2.g4 by ANTLR 4.9.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -426,6 +426,16 @@ public interface OpenSCENARIO2Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitExtensionMemberDecl(OpenSCENARIO2Parser.ExtensionMemberDeclContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link OpenSCENARIO2Parser#globalParameterDeclaration}.
+	 * @param ctx the parse tree
+	 */
+	void enterGlobalParameterDeclaration(OpenSCENARIO2Parser.GlobalParameterDeclarationContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link OpenSCENARIO2Parser#globalParameterDeclaration}.
+	 * @param ctx the parse tree
+	 */
+	void exitGlobalParameterDeclaration(OpenSCENARIO2Parser.GlobalParameterDeclarationContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link OpenSCENARIO2Parser#typeDeclarator}.
 	 * @param ctx the parse tree
@@ -1286,4 +1296,14 @@ public interface OpenSCENARIO2Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitIntegerLiteral(OpenSCENARIO2Parser.IntegerLiteralContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link OpenSCENARIO2Parser#identifier}.
+	 * @param ctx the parse tree
+	 */
+	void enterIdentifier(OpenSCENARIO2Parser.IdentifierContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link OpenSCENARIO2Parser#identifier}.
+	 * @param ctx the parse tree
+	 */
+	void exitIdentifier(OpenSCENARIO2Parser.IdentifierContext ctx);
 }
