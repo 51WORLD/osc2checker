@@ -1,4 +1,4 @@
-// Generated from /Users/mao/work/openscenario2/osc2grammar/OpenSCENARIO2.g4 by ANTLR 4.9.1
+// Generated from /Users/mao/work/openscenario2/osc2checker/osc2grammar/OpenSCENARIO2.g4 by ANTLR 4.9.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -514,6 +514,18 @@ public class OpenSCENARIO2BaseListener implements OpenSCENARIO2Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitExtensionMemberDecl(OpenSCENARIO2Parser.ExtensionMemberDeclContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterGlobalParameterDeclaration(OpenSCENARIO2Parser.GlobalParameterDeclarationContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitGlobalParameterDeclaration(OpenSCENARIO2Parser.GlobalParameterDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -1546,6 +1558,18 @@ public class OpenSCENARIO2BaseListener implements OpenSCENARIO2Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitIntegerLiteral(OpenSCENARIO2Parser.IntegerLiteralContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIdentifier(OpenSCENARIO2Parser.IdentifierContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIdentifier(OpenSCENARIO2Parser.IdentifierContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

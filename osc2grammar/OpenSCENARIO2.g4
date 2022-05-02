@@ -163,6 +163,7 @@ oscDeclaration
 	|	scenarioDeclaration
 	|	modifierDeclaration
 	|   typeExtension
+	|   globalParameterDeclaration
 	|   NEWLINE
 	;
 
@@ -222,7 +223,7 @@ enumName : Identifier;
 
 enumMemberName : Identifier;
 
-enumValueReference : (enumName '.')? enumMemberName;
+enumValueReference : (enumName '!')? enumMemberName;
 
 //----------------------------------------
 // structDeclaration
@@ -295,9 +296,8 @@ modifierDeclaration
 
 modifierName : Identifier;
 
-
 //----------------------------------------
-// modifierDeclaration
+// typeExtension
 typeExtension : enumTypeExtension | structuredTypeExtension;
 
 enumTypeExtension : 'extend' enumName ':' NEWLINE INDENT
@@ -316,7 +316,10 @@ extensionMemberDecl
 	| actorMemberDecl 
 	| scenarioMemberDecl
 	| behaviorSpecification;
-	
+
+//----------------------------------------
+// globalParameterDeclaration
+globalParameterDeclaration : 'global' parameterDeclaration ;
 
 //Type declarations
 typeDeclarator : nonAggregateTypeDeclarator | aggregateTypeDeclarator;
@@ -545,6 +548,7 @@ valueExp
 	| integerLiteral
 	| BoolLiteral
 	| StringLiteral
+	| enumValueReference
 	| listConstructor
 	| rangeConstructor;
 
@@ -570,6 +574,8 @@ namedArgument : argumentName ':' expression;
 physicalLiteral : (FloatLiteral | integerLiteral) unitName= Identifier;
 
 integerLiteral : UintLiteral | HexUintLiteral | IntLiteral;
+
+identifier : Identifier | 'expression' | 'unit' | 'import' | 'factor' | 'offset' | 'enum' | 'struct' | 'actor' | 'scenario' | 'action' | 'modifier' ;
 
 //----------------------------------------
 // Lexer rules
