@@ -575,8 +575,6 @@ physicalLiteral : (FloatLiteral | integerLiteral) unitName= Identifier;
 
 integerLiteral : UintLiteral | HexUintLiteral | IntLiteral;
 
-identifier : Identifier | 'expression' | 'unit' | 'import' | 'factor' | 'offset' | 'enum' | 'struct' | 'actor' | 'scenario' | 'action' | 'modifier' ;
-
 //----------------------------------------
 // Lexer rules
 

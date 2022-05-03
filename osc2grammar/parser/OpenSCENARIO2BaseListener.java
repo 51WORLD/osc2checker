@@ -1558,18 +1558,6 @@ public class OpenSCENARIO2BaseListener implements OpenSCENARIO2Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitIntegerLiteral(OpenSCENARIO2Parser.IntegerLiteralContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterIdentifier(OpenSCENARIO2Parser.IdentifierContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitIdentifier(OpenSCENARIO2Parser.IdentifierContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
