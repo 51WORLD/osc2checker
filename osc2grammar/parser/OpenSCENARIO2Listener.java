@@ -1,4 +1,4 @@
-// Generated from /Users/mao/work/openscenario2/osc2checker/osc2grammar/OpenSCENARIO2.g4 by ANTLR 4.9.1
+// Generated from F:\github\myfork\osc2checker\osc2grammar/OpenSCENARIO2.g4 by ANTLR 4.9.1
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -767,16 +767,6 @@ public interface OpenSCENARIO2Listener extends ParseTreeListener {
 	 */
 	void exitParameterReference(OpenSCENARIO2Parser.ParameterReferenceContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link OpenSCENARIO2Parser#modifierInvocation}.
-	 * @param ctx the parse tree
-	 */
-	void enterModifierInvocation(OpenSCENARIO2Parser.ModifierInvocationContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link OpenSCENARIO2Parser#modifierInvocation}.
-	 * @param ctx the parse tree
-	 */
-	void exitModifierInvocation(OpenSCENARIO2Parser.ModifierInvocationContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link OpenSCENARIO2Parser#behaviorExpression}.
 	 * @param ctx the parse tree
 	 */
@@ -1017,15 +1007,15 @@ public interface OpenSCENARIO2Listener extends ParseTreeListener {
 	 */
 	void exitCoverageDeclaration(OpenSCENARIO2Parser.CoverageDeclarationContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link OpenSCENARIO2Parser#coverageArgumentList}.
+	 * Enter a parse tree produced by {@link OpenSCENARIO2Parser#modifierApplication}.
 	 * @param ctx the parse tree
 	 */
-	void enterCoverageArgumentList(OpenSCENARIO2Parser.CoverageArgumentListContext ctx);
+	void enterModifierApplication(OpenSCENARIO2Parser.ModifierApplicationContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link OpenSCENARIO2Parser#coverageArgumentList}.
+	 * Exit a parse tree produced by {@link OpenSCENARIO2Parser#modifierApplication}.
 	 * @param ctx the parse tree
 	 */
-	void exitCoverageArgumentList(OpenSCENARIO2Parser.CoverageArgumentListContext ctx);
+	void exitModifierApplication(OpenSCENARIO2Parser.ModifierApplicationContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link OpenSCENARIO2Parser#expression}.
 	 * @param ctx the parse tree

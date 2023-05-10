@@ -1,4 +1,4 @@
-// Generated from /Users/mao/work/openscenario2/osc2checker/osc2grammar/OpenSCENARIO2.g4 by ANTLR 4.9.1
+// Generated from F:\github\myfork\osc2checker\osc2grammar/OpenSCENARIO2.g4 by ANTLR 4.9.1
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
@@ -927,18 +927,6 @@ public class OpenSCENARIO2BaseListener implements OpenSCENARIO2Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterModifierInvocation(OpenSCENARIO2Parser.ModifierInvocationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitModifierInvocation(OpenSCENARIO2Parser.ModifierInvocationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterBehaviorExpression(OpenSCENARIO2Parser.BehaviorExpressionContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -1227,13 +1215,13 @@ public class OpenSCENARIO2BaseListener implements OpenSCENARIO2Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCoverageArgumentList(OpenSCENARIO2Parser.CoverageArgumentListContext ctx) { }
+	@Override public void enterModifierApplication(OpenSCENARIO2Parser.ModifierApplicationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCoverageArgumentList(OpenSCENARIO2Parser.CoverageArgumentListContext ctx) { }
+	@Override public void exitModifierApplication(OpenSCENARIO2Parser.ModifierApplicationContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
