@@ -198,8 +198,6 @@ sIBaseExponent : sIBaseUnitName = Identifier {
 		   !unitName.equals("K") &&
 		   !unitName.equals("mol") &&
 		   !unitName.equals("cd") &&
-		   !unitName.equals("factor") && // Identifier to be checked further in semantic parser
-		   !unitName.equals("offset") && // Identifier to be checked further in semantic parser
 		   !unitName.equals("rad")){ 
 			throw new NoViableAltException(this);
 		}
@@ -274,7 +272,7 @@ scenarioMemberDecl
 	| constraintDeclaration 
 	| methodDeclaration 
 	| coverageDeclaration
-	| modifierInvocation;
+	| modifierApplication;
 
 qualifiedBehaviorName : (actorName '.')? behaviorName;
 
@@ -292,7 +290,7 @@ actionDeclaration
 modifierDeclaration 
 	: 'modifier' (actorName '.')? modifierName 
 	('of'  qualifiedBehaviorName)?
-	((':' NEWLINE INDENT scenarioMemberDecl+ DEDENT) | NEWLINE);
+	((':' NEWLINE INDENT (scenarioMemberDecl | onDirective)+ DEDENT) | NEWLINE);
 
 modifierName : Identifier;
 
@@ -300,8 +298,8 @@ modifierName : Identifier;
 // typeExtension
 typeExtension : enumTypeExtension | structuredTypeExtension;
 
-enumTypeExtension : 'extend' enumName ':' NEWLINE INDENT
-	(enumMemberDecl NEWLINE)+ DEDENT;
+enumTypeExtension : 'extend' enumName ':'
+	OPEN_BRACK enumMemberDecl (',' enumMemberDecl)* OPEN_BRACK NEWLINE;
 
 structuredTypeExtension : 'extend' extendableTypeName 
 	':' NEWLINE INDENT extensionMemberDecl+ DEDENT;
@@ -411,8 +409,6 @@ removeDefaultDeclaration : 'remove_default' '(' parameterReference ')' NEWLINE;
 
 parameterReference : fieldName | fieldAccess;
 
-modifierInvocation : ((behaviorExpression | actorExpression) '.')? modifierName '(' (argumentList)? ')' NEWLINE;
-
 behaviorExpression : (actorExpression '.') behaviorName;
 
 // behaviorSpecification
@@ -446,7 +442,7 @@ behaviorWithDeclaration : 'with' ':' NEWLINE INDENT
 	behaviorWithMember+ DEDENT;
 
 behaviorWithMember : constraintDeclaration
-                   | modifierInvocation
+                   | modifierApplication
                    | untilDirective;
 
 labelName : Identifier;
@@ -479,10 +475,12 @@ methodQualifier : 'only';
 methodName : Identifier;
 
 // coverageDeclaration
-coverageDeclaration : ('cover' | 'record') '(' coverageArgumentList ')' NEWLINE;
+coverageDeclaration : ('cover' | 'record') '(' argumentList ')' NEWLINE;
 
-coverageArgumentList : Identifier (',' 'expression' ':' expression)? 
-                     ((',' 'unit' ':' Identifier)  | (',' 'range' ':' rangeConstructor) | (',' 'every' ':' valueExp) |(',' 'event' ':' eventName) | (',' namedArgument) )* ;
+//coverageArgumentList : Identifier (',' 'expression' ':' expression)? 
+//                     ((',' 'unit' ':' Identifier)  | (',' 'range' ':' rangeConstructor) | (',' 'every' ':' valueExp) |(',' 'event' ':' eventName) | (',' namedArgument) )* ;
+
+modifierApplication : (actorExpression '.')? modifierName '(' (argumentList)? ')' NEWLINE;
 
 //Expressions
 expression 
